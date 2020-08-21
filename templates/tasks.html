@@ -1,0 +1,13 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        {% for recipe in tasks %}
+            {{recipe.recipe_name}}
+            {{recipe.category_name}}
+            {{recipe.reipe_description}}
+            {{recipe.due_date}}
+        {% endfor %}
+    </body>
+</html>
