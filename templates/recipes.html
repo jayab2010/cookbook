@@ -9,16 +9,15 @@
                     <strong>{{recipe.recipe_name}}</strong> 
                 </div>
         <div class="card-image">
-         <img src="{{ recipe.image_source }}" alt="Picture of {{ recipe.name }}">
+         <img src="{{recipe.image_src}}" alt="Picture of {{recipe.name}}">
           <span class="card-title"></span>
         </div>
         <div class="card-content">
-          <p>{{recipe.recipe_description}} 
-          </p>
+          <p>{{recipe.recipe_description}} </p>
         </div>
         <div class="card-action">
           <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small blue">full Recipe</a>
-          {{recipe.due_date}}
+          {{recipe.post_date}}
         </div>
       </div>
     </div>
