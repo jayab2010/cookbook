@@ -22,6 +22,13 @@ def add_recipe():
                            categories=mongo.db.categories.find())
 
 
+
+@app.route('/full_recipe')
+def full_recipe():
+    return render_template('fullrecipe.html',
+                           categories=mongo.db.categories.find())
+
+
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes =  mongo.db.recipes
