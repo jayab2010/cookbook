@@ -1,23 +1,90 @@
 {% extends 'base.html'%} {% block content %}
-{% for recipe in recipes %}
-  <div class="col s12 m7">
-    <div class="card horizontal">
-      <div class="image_src">
-       <img src="{{recipe.image_src}}" alt="Picture of {{recipe.name}}">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-                    <h5 class="header"><strong>{{recipe.recipe_name}}</strong></h5>
-                    <p> {{recipe.recipe_description}} </p>
-                           
-        <div class="card-action">
-          <a href="{{url_for('full_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small">full Recipe</a>
+
+
+<div class="container-img">
+    <img id="image" src="/static/img/recipe.jpeg" class="responsive-img">
+    <div class="centered-img  hide-on-small-only">
+        <div class="centered-img-p">
+            <h3>Your favourite recipes.</h3>
         </div>
-      </div>
     </div>
-  </div>
-  </div>
+    <div class="centered-img-mobile hide-on-med-and-up">
+        <div class="centered-img-p">
+            <h4>Eat. Well.</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+        <div class="col s6 m4">
+            <div class="card blue-grey darken-1 hoverable">
+                <div class="card-image">
+                    <img src="/static/img/recipe1.jpg" class="responsive-img">
+                </div>
+                <div class="card-action card-action-bgcolor">
+                    <a href="{{url_for('full_recipe')}}" class="hvr-grow">Breakfast</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s6 m4">
+            <div class="card blue-grey darken-1 hoverable">
+                <div class="card-image">
+                    <img src="/static/img/recipe1.jpg" class="responsive-img">
+                </div>
+                <div class="card-action card-action-bgcolor">
+                    <a href="{{url_for('full_recipe')}}" class="hvr-grow">Lunch</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="card blue-grey darken-1 hoverable">
+                <div class="card-image">
+                    <img src="/static/img/recipe1.jpg" class="responsive-img">
+                </div>
+                <div class="card-action card-action-bgcolor">
+                    <a href="{{url_for('full_recipe')}}" class="hvr-grow">Dinner</a>
+                </div>
+            </div>
+        </div>
 
 
-        {% endfor %}
+<div class="col s6 m4">
+            <div class="card blue-grey darken-1 hoverable">
+                <div class="card-image">
+                    <img src="/static/img/recipe1.jpg" class="responsive-img">
+                </div>
+                <div class="card-action card-action-bgcolor">
+                    <a href="{{url_for('full_recipe')}}" class="hvr-grow">Breakfast</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s6 m4">
+            <div class="card blue-grey darken-1 hoverable">
+                <div class="card-image">
+                    <img src="/static/img/recipe1.jpg" class="responsive-img">
+                </div>
+                <div class="card-action card-action-bgcolor">
+                    <a href="{{url_for('full_recipe')}}" class="hvr-grow">Lunch</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="card blue-grey darken-1 hoverable">
+                <div class="card-image">
+                    <img src="/static/img/recipe1.jpg" class="responsive-img">
+                </div>
+                <div class="card-action card-action-bgcolor">
+                    <a href="{{url_for('full_recipe')}}" class="hvr-grow">Dinner</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+  
+
+       
    {% endblock %}
