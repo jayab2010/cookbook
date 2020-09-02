@@ -1,8 +1,7 @@
 {% extends 'base.html'%} {% block content %}
-
+<div class="container">
 <div class="row">
-
-    <h3>Categories</h3>
+<h3>Categories</h3>
     <ul class="collapsible" data-collapsible="accordion">
         {% for category in categories %}
         <li>
@@ -24,5 +23,5 @@
         <i class="material-icons right">playlist_add</i>Add Category
     </a>
 </div>
-
+</div>
 {% endblock %}

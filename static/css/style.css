@@ -10,6 +10,16 @@
     margin-top: 5px;
 }
 
+.recipe-image {
+    margin: 5px 5px;
+    padding: 5px;
+    height: 120px;
+    width: 120px;
+    border: 2px;
+    border-color: grey;
 
+}
 
+h4 {
+    color: black;
 }
