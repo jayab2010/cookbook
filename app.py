@@ -4,9 +4,9 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'cook_book'
-app.config["MONGO_URI"] = "mongodb://root:r00tUser@myfirstcluster-shard-00-00.w52aw.mongodb.net:27017,myfirstcluster-shard-00-01.w52aw.mongodb.net:27017,myfirstcluster-shard-00-02.w52aw.mongodb.net:27017/cook_book?ssl=true&replicaSet=atlas-n79620-shard-0&authSource=admin&retryWrites=true&w=majority"
 
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 
 @app.route('/')
@@ -25,14 +25,14 @@ def get_recipes():
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
-                           categories=mongo.db.categories.find())
+                          recipes=mongo.db.recipes.find())
 
 
 
 @app.route('/full_recipe')
 def full_recipe():
     return render_template('fullrecipe.html',
-                           recipes=mongo.db.recipes.find())
+                           categories=mongo.db.categories.find())
 
 
 
